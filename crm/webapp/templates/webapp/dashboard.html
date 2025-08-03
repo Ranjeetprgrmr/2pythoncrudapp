@@ -1,0 +1,82 @@
+{% extends 'webapp/base.html' %} 
+
+
+{% block content %}
+
+
+
+<h3>
+  Welcome! You have successfully logged in to the dashboard page! {{user}} 👋
+</h3>
+
+<hr />
+
+<a
+  class="btn btn-outline-primary btn-sm"
+  type="button"
+  href="{% url 'create-record' %}"
+>
+  Create a new record &nbsp <i class="fa fa-plus-circle" aria-hidden="true"></i>
+
+</a>
+
+<hr />
+
+<table class="table table-light table-hover table-bordered">
+  <thead class="table-light">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">FULL NAME</th>
+      <th scope="col">EMAIL</th>
+      <th scope="col">PHONE</th>
+      <th scope="col">ADDRESS</th>
+      <th scope="col">CITY</th>
+      <th scope="col">PROVINCE</th>
+      <th scope="col">COUNTRY</th>
+
+      <th scope="col">CREATION DATE</th>
+
+      <th scope="col">VIEW</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% if records %} 
+      {% for record in records %}
+    <tr>
+      <th scope="row">{{record.id}}</th>
+      <td>{{record.first_name}} {{record.last_name}}</td>
+      <td>{{record.email}}</td>
+      <td>{{record.phone}}</td>
+      <td>{{record.address}}</td>
+      <td>{{record.city}}</td>
+      <td>{{record.province}}</td>
+      <td>{{record.country}}</td>
+
+      <td>{{record.creation_date}}</td>
+
+      <td><a class="btn btn-success btn-sm mx-2" href="{% url 'record' record.id %}"> <i class="fa fa-eye" aria-hidden="true"></i>
+       </a></td>
+
+      
+    </tr>
+      {% endfor %} 
+    {% endif %}
+  </tbody>
+</table>
+
+
+<!-- <script>
+  var message_timeout = document.getElementById("message-timer");
+if (message_timeout) {
+    message_timeout.addEventListener('transitionend', function() {
+        message_timeout.remove();
+    });
+    message_timeout.classList.add('animate');
+}
+else {
+    console.log("Message timer element not found");
+}
+</script> -->
+
+{% endblock %}

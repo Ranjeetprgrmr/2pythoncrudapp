@@ -1,0 +1,45 @@
+{% extends 'webapp/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<body>
+<div class="container mb-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-8 col-sm-10 bg-light shadow-md p-3 p-md-4">  <!-- Responsive columns and padding -->
+            
+            <h3 class="h4 text-center">Update Record</h3>  <!-- Centered and smaller heading -->
+            <h6>Start updating in the required details for you record</h6>
+            
+            <hr class="my-3"/>  <!-- Adjusted margin -->
+            
+            <form method="post" autocomplete="off">
+                {% csrf_token %}
+                {{ form4.first_name|as_crispy_field }}
+                <br>
+                {{ form4.last_name|as_crispy_field }}
+                <br>
+                {{ form4.email|as_crispy_field }}
+                <br>
+                {{ form4.phone|as_crispy_field }}
+                <br>
+                {{ form4.address|as_crispy_field }}
+                <br>
+                {{ form4.city|as_crispy_field }}
+                <br>
+                {{ form4.province|as_crispy_field }}
+                <br>
+                {{ form4.country|as_crispy_field }}
+                <br>
+               <!-- Better button spacing -->
+                    <button type="submit" class="btn btn-primary mt-3">  <!-- Smaller button -->
+                        Update record &nbsp; <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </button>
+
+                    <a href="{% url 'dashboard' %}" class="btn btn-secondary mt-3 mx-2">Return &nbsp; <i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+              
+            </form>
+    </div>
+</body>
+   
+{% endblock %}

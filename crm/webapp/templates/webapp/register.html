@@ -1,0 +1,47 @@
+
+{% extends 'webapp/base.html' %} 
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<body>
+  <div class="container mb-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-4 col-md-8 col-sm-10 bg-light shadow-md p-3 p-md-4">  <!-- Responsive columns and padding -->
+        
+        <h3 class="h4 text-center">Register</h3>  <!-- Centered and smaller heading -->
+
+        <h5 class="h6 text-center mb-3">Start managing your clients today!</h5>  <!-- Centered and smaller subheading -->
+        <hr class="my-3"/>  <!-- Adjusted margin -->
+        
+        <form method="post" autocomplete="off">
+          {% csrf_token %}
+
+          {{ form.username|as_crispy_field }}
+
+          <br>
+
+          {{ form.password1|as_crispy_field }}
+
+          <br>
+
+          {{ form.password2|as_crispy_field }}
+
+          <br>
+
+          <div class="d-grid gap-2 mt-3">  <!-- Better button spacing -->
+            <button type="submit" class="btn btn-primary btn-sm py-2">  <!-- Smaller button -->
+              Register &nbsp; <i class="fa fa-user" aria-hidden="true"></i>
+
+            </button>
+          </div>
+        </form>
+        
+        <div class="text-center mt-3">
+          <p class="small">Already have an account? <a href="{% url 'my-login' %}">Login</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+{% endblock %}

@@ -1,0 +1,51 @@
+
+/* Mobile styles (applies below 768px) in navbar.html */
+@media (max-width: 767.98px) {
+    .navbar-brand {
+      font-size: 1rem;
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
+    }
+    
+  }
+
+  /* Mobile styles (applies below 768px) in index.html */
+  @media (max-width: 767.98px) {
+    .text-center h3 {
+      font-size: 1.25rem !important;  /* Adjust as needed */
+    }
+    .text-center h5 {
+      font-size: 0.9rem !important;   /* Adjust as needed */
+    }
+    .text-center .btn {
+      padding: 0.25rem 0.5rem;
+      font-size: 0.8rem;
+    }
+  }
+
+.form-layout{
+  border-radius: 15px;
+  width: 500px;
+}
+
+
+/* CSS for required fields in create-record.html */
+.requiredField{
+  margin-top: 8px;
+  margin-bottom: 2px;
+}
+.textinput{
+  padding: 5px;
+}
+
+
+/* CSS for notification messages */
+.message-text{
+  color: white;
+  font-weight: bold;
+}
+
+#message-timer.animate {
+  transition: opacity 2s;
+  opacity: 0;
+}
