@@ -3,23 +3,15 @@
 # To generate the requirements.txt file = pip freeze > requirements.txt
 
 
-
-
-
-
-
 # superuser credentials
 # Username (leave blank to use 'lenovo'): 
 # Email address: 
 # Password: password
 # Password (again): password
 
-
-
 # register user
 # username = manager1
 # password = password123!@#
-
 
 
 
@@ -52,3 +44,10 @@
 #  * [new branch]      main -> main
 # branch 'main' set up to track 'origin/main'.
 # PS E:\PYTHON\2pythonCrudAppDeployed-CWD> 
+
+
+
+# Render deployment successfull with this added as environment variable in render 
+# DJANGO_SETTINGS_MODULE=crm.settings
+# PYTHONPATH=/opt/render/project/src/crm
+# DISABLE_COLLECTSTATIC=0
