@@ -13,13 +13,15 @@
 
     "routes": [
 
-        {
-
-            "src": "/(.*)",
-
-            "dest": "crm/crm/wsgi.py"
-
-        }
+        
+            {
+                "src": "/static/(.*)",
+                "dest": "/static/$1"
+              },
+              {
+                "src": "/(.*)",
+                "dest": "your_project_name/wsgi.py"
+              }
 
     ]
 
