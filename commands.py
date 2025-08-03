@@ -51,3 +51,6 @@
 # DJANGO_SETTINGS_MODULE=crm.settings
 # PYTHONPATH=/opt/render/project/src/crm
 # DISABLE_COLLECTSTATIC=0
+
+# build command in render
+# pip install -r requirements.txt && python manage.py collectstatic --noinput
