@@ -1,8 +1,9 @@
 {
-
+    "version": 2,
+    "framework": "django",
     "builds": [{
 
-        "src": "crm/wsgi.py",
+        "src": "crm/crm/wsgi.py",
 
         "use": "@vercel/python",
 
@@ -16,7 +17,7 @@
 
             "src": "/(.*)",
 
-            "dest": "crm/wsgi.py"
+            "dest": "crm/crm/wsgi.py"
 
         }
 
